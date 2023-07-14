@@ -47,8 +47,8 @@ const Item = (props) => {
         <View style={styles.item}>
             <Feather name={'sun'} size={50} color={'white'} />
             <Text style={styles.date}>{dt_txt}</Text>
-            <Text style={style.temp}>{min}</Text>
-            <Text style={style.temp}>{max}</Text>
+            <Text style={styles.temp}>{min}</Text>
+            <Text style={styles.temp}>{max}</Text>
         </View>
     )
 }
@@ -64,12 +64,16 @@ const UpcomingWeather = () => {
     )
     return (
         <SafeAreaView style={styles.container}>
-            <ImageBackground source={require('../../assets/upcoming-background.jpg')} style={styles.image}>
-            <Text>Upcoming Weather</Text>
-            <FlatList 
-                data={DATA} 
-                renderItem={renderItem} 
-                keyExtractor={(item) => item.dt_txt}/>
+            <ImageBackground 
+                source={require('../../assets/upcoming-background.jpg')} 
+                style={styles.image}
+            >
+                <Text>Upcoming Weather</Text>
+                <FlatList 
+                    data={DATA} 
+                    renderItem={renderItem} 
+                    keyExtractor={(item) => item.dt_txt}
+                />
             </ImageBackground>
         </SafeAreaView>
     )
