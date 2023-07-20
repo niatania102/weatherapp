@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, Text, ImageBackground, StatusBar, StyleSheet, View } from 'react-native';
 import { Feather } from '@expo/vector-icons'
+import { IconText } from './IconText';
 
 const City = () => {
     return (
@@ -12,14 +13,26 @@ const City = () => {
                 <Text style={[styles.cityName, styles.cityText]}>London</Text>
                 <Text style={[styles.countryName, styles.cityText]}>UK</Text>
                 <View style={styles.populationWrapper}>
-                    <Feather name={'user'} size={50} color={'red'} />
-                    <Text style={styles.populationText}>8000</Text>
+                    <IconText
+                        iconName={'user'}
+                        iconColor={'red'}
+                        bodyText={'8000'}
+                        bodyTextStyles={styles.populationText}
+                    />
                 </View>
                 <View style={styles.riseSetWrapper}>
-                    <Feather name={'sunrise'} size={50} color={'white'} />
-                    <Text style={styles.riseSetText}>10:12:34am</Text>
-                    <Feather name={'sunset'} size={50} color={'white'} />
-                    <Text style={styles.riseSetText}>17:34:12pm</Text>
+                    <IconText
+                        iconName={'sunrise'}
+                        iconColor={'white'}
+                        bodyText={'07:12:23am'}
+                        bodyTextStyles={styles.riseSetText}
+                    />
+                    <IconText
+                        iconName={'sunset'}
+                        iconColor={'white'}
+                        bodyText={'17:02:12'}
+                        bodyTextStyles={styles.riseSetText}
+                    />
                 </View>
             </ImageBackground>
         </SafeAreaView>
@@ -55,8 +68,7 @@ const styles = StyleSheet.create({
     populationText:{
         fontSize: 25,
         marginLeft: 7.5,
-        color: 'red',
-        fontWeight: 'bold'
+        color: 'red'
     },
     riseSetWrapper:{
         flexDirection: 'row',
@@ -66,8 +78,8 @@ const styles = StyleSheet.create({
     },
     riseSetText:{
         fontSize:20,
-        color: 'white',
-        fontWeight: 'bold'
+        color: 'white'
     }
 })
+
 export default City
