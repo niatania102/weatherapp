@@ -1,6 +1,13 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, FlatList, StatusBar, ImageBackground } from 'react-native'
-import ListItem from '../components/listitem'
+import { 
+    SafeAreaView, 
+    StyleSheet, 
+    Text, 
+    FlatList, 
+    StatusBar, 
+    ImageBackground 
+} from 'react-native'
+import ListItem from '../components/ListItem'
 
 const DATA = [
     {
