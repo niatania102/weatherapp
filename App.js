@@ -1,6 +1,6 @@
 import React from "react"
 import { View, StyleSheet } from "react-native"
-import City from "./src/components/City"
+import City from "./src/screens/City"
 
 const App = () => {
   return (
