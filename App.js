@@ -4,22 +4,22 @@ import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./src/components/Tabs";
 import { useGetWeather } from "./src/hooks/useGetWeather";
 import ErrorItem from "./src/components/ErrorItem";
-
-//api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+import OurButton from "./src/demontrations/OurButton";
 
 const App = () => {
   const [loading, error, weather] = useGetWeather();
 
-  if (weather && weather.list && !loading) {
-    return (
-      <NavigationContainer>
-        <Tabs weather={weather} />
-      </NavigationContainer>
-    );
-  }
+  // if (weather && weather.list && !loading) {
+  //   return (
+  //     <NavigationContainer>
+  //       <Tabs weather={weather} />
+  //     </NavigationContainer>
+  //   );
+  // }
 
   return (
     <View style={styles.container}>
+      <OurButton/>
       {error ? (
         <ErrorItem />
       ) : (
