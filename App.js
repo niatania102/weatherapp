@@ -9,17 +9,16 @@ import OurButton from "./src/demontrations/OurButton";
 const App = () => {
   const [loading, error, weather] = useGetWeather();
 
-  // if (weather && weather.list && !loading) {
-  //   return (
-  //     <NavigationContainer>
-  //       <Tabs weather={weather} />
-  //     </NavigationContainer>
-  //   );
-  // }
+  if (weather && weather.list && !loading) {
+    return (
+      <NavigationContainer>
+        <Tabs weather={weather} />
+      </NavigationContainer>
+    );
+  }
 
   return (
     <View style={styles.container}>
-      <OurButton/>
       {error ? (
         <ErrorItem />
       ) : (
